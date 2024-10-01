@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Muhammad Dira IF23A 1053</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Muhammad Dira IF23A</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <article>
+            <h2>Postingan 4</h2>
+            <h3>Apa itu Phyical model</h3>
+            <p>
+                Physical model atau model fisik dalam basis data adalah representasi yang menggambarkan bagaimana data disimpan secara nyata di dalam sistem komputer. Jika conceptual model seperti denah rumah yang hanya menunjukkan rencana ruang, physical model adalah
+                langkah terakhir dalam pembangunan rumah yang memperhatikan detail-detail teknis, seperti bahan bangunan, ukuran pintu, atau jenis kabel listrik yang digunakan.
+            </p>
+            <p>
+                Pada model fisik, fokusnya adalah pada cara penyimpanan dan pengelolaan data secara efisien di perangkat keras. Ini melibatkan berbagai aspek teknis yang digunakan oleh sistem manajemen basis data (DBMS), seperti struktur penyimpanan, indeks, partisi
+                data, dan optimasi.
+            </p>
+            <p>Fitur utama dari physical model:</p>
+            <p>
+                <h3>1.Detail penyimpanan</h3>
+                <ul>
+                    <p>
+                        Menjelaskan bagaimana data disimpan secara fisik dalam bentuk file, tabel, atau struktur lainnya di dalam sistem penyimpanan (seperti hard drive atau server cloud).
+                    </p>
+                    <p>
+                        Contoh: Sebuah tabel yang dalam conceptual model hanya menggambarkan data siswa, dalam physical model akan dijelaskan bahwa setiap entri siswa disimpan sebagai baris pada file tertentu dengan ukuran tertentu.
+                    </p>
+                </ul>
+            </p>
+            <p>
+                <h3>2.Indexing</h3>
+                <ul>
+                    <p>
+                        Physical model menentukan cara pencarian data yang cepat dengan menggunakan indeks. Indeks adalah struktur tambahan yang dibuat untuk mempercepat pencarian data, mirip seperti daftar isi di buku.
+                    </p>
+                    <p>
+                        Contoh: Jika kita sering mencari siswa berdasarkan nomor ID, physical model bisa membuat indeks di kolom nomor ID untuk mempercepat pencarian.
+                    </p>
+                </ul>
+            </p>
+            <p>
+                <h3>3.Partisi data</h3>
+                <ul>
+                    <p>
+                        Data bisa dipartisi atau dipisah-pisahkan berdasarkan kategori tertentu. Ini dilakukan untuk meningkatkan efisiensi penyimpanan atau akses data.
+                    </p>
+                    <p>
+                        Contoh: Jika ada jutaan data transaksi yang tersebar selama bertahun-tahun, physical model bisa membagi transaksi tersebut per tahun, sehingga akses ke data tahun tertentu lebih cepat.
+                    </p>
+                </ul>
+            </p>
+            <p>
+                <h3>4.Optimasi penyimpanan dan akses</h3>
+                <ul>
+                    <p>
+                        Physical model dirancang untuk memaksimalkan kecepatan dan efisiensi akses data, termasuk meminimalkan ruang penyimpanan yang digunakan dan mempercepat proses pengambilan data.
+                    </p>
+                </ul>
+            </p>
+            <p>
+                <h3>5.Tipe data</h3>
+                <ul>
+                    <p>
+                        Pada level ini, tipe data yang digunakan untuk menyimpan informasi juga ditentukan, misalnya apakah kolom tertentu harus berupa angka, teks, atau tanggal.
+                    </p>
+                    <p>
+                        Contoh: Dalam tabel siswa, kolom usia mungkin akan ditentukan sebagai tipe "Integer" (angka bulat), sementara nama siswa mungkin akan disimpan sebagai "Varchar" (teks).
+                    </p>
+                </ul>
+            </p>
+            <p>
+                Contoh sederhana dari physical model: Jika kita membuat sistem untuk menyimpan data siswa di sekolah, conceptual model mungkin hanya mengatakan ada tabel "Siswa" dengan informasi seperti nama, umur, dan kelas. Namun, physical model akan lebih rinci, dengan
+                menjelaskan bahwa:
+                <ul>
+                    <li>Nama disimpan sebagai teks dengan panjang maksimum 50 karakter.
+                    </li>
+                    <li>Umur disimpan sebagai angka.
+                    </li>
+                    <li>Database akan membuat indeks di kolom "ID siswa" untuk mempercepat pencarian data.
+                    </li>
+                    <li>Data siswa disimpan dalam file tertentu di server dengan alokasi memori dan pengaturan akses</li>
+                </ul>
+            </p>
+            <p>
+                Jadi, physical model adalah langkah akhir dari desain basis data, memastikan bahwa sistem dapat menyimpan dan mengelola data secara efisien dan aman sesuai dengan kebutuhan sistem.
+            </p>
+        </article>
+    </main>
+    <footer>
+        <p>NIM 23416255201053</p>
+    </footer>
+</body>
+
+</html>
