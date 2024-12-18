@@ -21,57 +21,92 @@
     </header>
     <main>
         <article>
-            <h2>Postingan 3</h2>
-            <h3>Apa itu Conseptual DB</h3>
-            <p>
-                Conceptual DB atau Basis Data Konseptual adalah cara kita menggambarkan data dan hubungannya secara sederhana dan jelas, seperti membuat peta data. Bayangkan ini seperti denah rumah atau sketsa awal sebelum rumah dibangun. Denah ini hanya menunjukkan
-                di mana ruang tamu, kamar tidur, dan dapur berada, tanpa harus memperhatikan detail seperti bahan bangunan atau jenis cat yang akan digunakan.
-            </p>
-            <h3>Cara mudah memahami Conceptual DB</h3>
-            <h3>1.Gambaran besar tentang data:</h3>
-            <p>
-                <ul>
-                    Conceptual DB hanya menunjukkan apa saja data yang ada dan bagaimana data tersebut saling berhubungan. Tidak perlu tahu cara menyimpan data atau teknologi apa yang dipakai, hanya konsep dasarnya.
-                    <p>
-                        Misalnya, dalam sebuah sekolah, ada data tentang:
-                    </p>
-                </ul>
-                <ul>
-                    <li>Siswa</li>
-                    <li>Guru</li>
-                    <li>Mata Pelajaran</li>
-                    <p>Dan di antara data ini, ada hubungan. Contohnya:</p>
-                    <li>Siswa belajar Mata Pelajaran</li>
-                    <li>Guru mengajar Mata Pelajaran</li>
-                </ul>
-            </p>
-            <p>
-                <h3>2.Seperti sketsa peta</h3>
-                <ul>Sama seperti peta menunjukkan posisi suatu tempat, conceptual DB menunjukkan posisi data. Tapi peta ini tidak menunjukkan bagaimana cara pergi ke sana atau bagaimana membangun jalan, hanya lokasi-lokasi pentingnya. </ul>
-                <h3>3.Tidak terikat pada teknologi</h3>
-                <ul>
-                    Sama seperti denah rumah bisa digunakan untuk rumah yang dibangun dari kayu atau beton, conceptual DB juga bisa diterapkan pada sistem komputer apa pun. Misalnya, peta ini bisa digunakan untuk berbagai jenis perangkat lunak atau sistem database.
-                </ul>
-                <h3>4.Untuk komunikasi yang mudah</h3>
-                <ul>
-                    Denah rumah berguna untuk berbicara dengan arsitek, tukang, atau pemilik rumah. Begitu juga, conceptual DB berguna untuk berbicara antara pengembang sistem, manajer, dan orang-orang yang memahami kebutuhan data, tanpa harus masuk ke teknis cara menyimpan
-                    data Contoh sederhana: Bayangkan Anda ingin membuat sistem perpustakaan.
-                    <p>Dalam conceptual DB, Anda akan melihat hal-hal seperti:</p>
-                    <li>Buku</li>
-                    <li>Anggota</li>
-                    <li>Peminjaman</li>
-                    <p>Dan hubungan di antaranya, misalnya:</p>
-                    <li>Anggota meminjam Buku.</li>
-                </ul>
+            <div class="mb-3">
+                <a href="https://www.ubpkarawang.ac.id" class="btn btn-secondary">&larr; Link ke www.ubpkarawang.ac.id
+                </a>
+            </div>
+            <div class="mb-3">
+                <a href="https://www.youtube.com/c/adirpcom" class="btn btn-secondary">&larr; Link ke Adirp.id
+                </a>
+            </div>
+            <div class="mb-3">
+                <h3>Buat ERD untuk mencatat mahasiswa yang memiliki dosen wali</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EZYdNHTWUjc?si=SCp3yC-zGMa3C5xR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="container">
+                <h1>Primary Key, Foreign Key, Candidate Key, dan Relasi dalam ERD</h1>
+
+                <h2>1. Primary Key (PK)</h2>
                 <p>
-                    Anda tidak perlu tahu bagaimana komputer menyimpan informasi ini. Anda hanya perlu tahu konsep dasarnya: apa saja datanya, dan bagaimana mereka berhubungan.
+                    <b>Primary Key</b> adalah atribut atau kumpulan atribut yang secara unik mengidentifikasi setiap record dalam tabel. Tidak boleh ada duplikasi atau nilai <i>NULL</i>.
                 </p>
-            </p>
+                <h3>Contoh Penerapan dalam ERD:</h3>
+                <ul>
+                    <li><b>Tabel Mahasiswa:</b> NIM sebagai Primary Key</li>
+                    <li><b>Tabel Dosen:</b> NIP sebagai Primary Key</li>
+                    <li><b>Tabel Mata Kuliah:</b> Kode_Matkul sebagai Primary Key</li>
+                    <li><b>Tabel Kelas:</b> Kode_Kelas sebagai Primary Key</li>
+                    <li><b>Tabel Peminjaman:</b> No_Peminjaman sebagai Primary Key</li>
+                </ul>
+
+                <h2>2. Foreign Key (FK)</h2>
+                <p>
+                    <b>Foreign Key</b> adalah atribut dalam suatu tabel yang mengacu ke Primary Key di tabel lain untuk membentuk hubungan antar tabel.
+                </p>
+                <h3>Contoh Penerapan dalam ERD:</h3>
+                <ul>
+                    <li><b>Tabel Mahasiswa:</b> Kode_Kelas mengacu pada Kode_Kelas di tabel Kelas</li>
+                    <li><b>Tabel Nilai:</b> NIM mengacu pada NIM di tabel Mahasiswa</li>
+                    <li><b>Tabel Nilai:</b> Kode_Matkul mengacu pada Kode_Matkul di tabel Mata Kuliah</li>
+                    <li><b>Tabel Jadwal:</b> NIP mengacu pada NIP di tabel Dosen</li>
+                    <li><b>Tabel Peminjaman:</b> NIM mengacu pada NIM di tabel Mahasiswa</li>
+                </ul>
+
+                <h2>3. Candidate Key</h2>
+                <p>
+                    <b>Candidate Key</b> adalah atribut atau kumpulan atribut yang dapat digunakan untuk secara unik mengidentifikasi record dalam tabel dan berpotensi menjadi Primary Key.
+                </p>
+                <h3>Contoh Penerapan dalam ERD:</h3>
+                <ul>
+                    <li><b>Tabel Mahasiswa:</b> NIM dan Email sebagai Candidate Key</li>
+                    <li><b>Tabel Dosen:</b> NIP dan No_HP sebagai Candidate Key</li>
+                    <li><b>Tabel Mata Kuliah:</b> Kode_Matkul dan Nama_Matkul sebagai Candidate Key</li>
+                    <li><b>Tabel Kelas:</b> Kode_Kelas dan Nama_Kelas sebagai Candidate Key</li>
+                    <li><b>Tabel Peminjaman:</b> No_Peminjaman dan Tanggal_Pinjam sebagai Candidate Key</li>
+                </ul>
+
+                <h2>4. Relasi dalam ERD</h2>
+                <p>
+                    <b>Relasi</b> dalam ERD adalah hubungan antara dua atau lebih entitas yang menggambarkan bagaimana entitas tersebut saling berhubungan.
+                </p>
+                <h3>Jenis-jenis Relasi:</h3>
+                <ul>
+                    <li><b>One-to-One (1:1):</b> Contoh: Pasien memiliki satu Rekam Medis.</li>
+                    <li><b>One-to-Many (1:N):</b> Contoh: Dosen mengajar banyak Mata Kuliah.</li>
+                    <li><b>Many-to-Many (M:N):</b> Contoh: Banyak Mahasiswa mengambil banyak Mata Kuliah.</li>
+                </ul>
+
+                <h3>Mengapa Many-to-Many Tidak Baik Digunakan?</h3>
+                <p>
+                    Relasi <b>Many-to-Many</b> tidak disarankan karena dapat menyebabkan:
+                </p>
+                <ul>
+                    <li><b>Redundansi Data:</b> Data yang berulang sehingga tidak efisien.</li>
+                    <li><b>Kesulitan dalam Normalisasi:</b> Tidak sesuai dengan prinsip normalisasi database.</li>
+                    <li><b>Kompleksitas Implementasi:</b> Sulit dikelola tanpa tabel perantara.</li>
+                </ul>
+                <p>Solusi untuk relasi Many-to-Many adalah dengan membuat tabel perantara (<i>junction table</i>).</p>
+
+                <h3>Contoh Tabel Perantara:</h3>
+                <ul>
+                    <li><b>Tabel Mahasiswa:</b> NIM, Nama_Mahasiswa</li>
+                    <li><b>Tabel Mata Kuliah:</b> Kode_Matkul, Nama_Matkul</li>
+                    <li><b>Tabel Mahasiswa_Matkul:</b> NIM, Kode_Matkul, Nilai</li>
+                </ul>
+            </div>
         </article>
     </main>
-    <footer>
-        <p>NIM 23416255201053</p>
-    </footer>
 </body>
 
 </html>

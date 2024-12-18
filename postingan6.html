@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Penjelasan SQL, DDL, DML, DCL, dan TCL</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    <header>
+        <h1>Penjelasan SQL, DDL, DML, DCL, dan TCL</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Beranda</a></li>
+                <li><a href="tentang.html">Tentang</a></li>
+                <li><a href="kontak.html">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="container">
+
+            <article>
+                <div class="mb-3">
+                    <a href="https://www.ubpkarawang.ac.id" class="btn btn-secondary">&larr; Link ke www.ubpkarawang.ac.id
+                    </a>
+                </div>
+                <div class="mb-3">
+                    <a href="https://www.youtube.com/c/adirpcom" class="btn btn-secondary">&larr; Link ke Adirp.id
+                    </a>
+                </div>
+                <div class="mb-3">
+                    <h3>Buat ERD tentang penerapan Denormalisasi
+                    </h3>
+                    <iframe width="560" height="315" src="https://www.youtube.com/embed/EZYdNHTWUjc?si=SCp3yC-zGMa3C5xR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+                <h2>Apa Itu SQL?</h2>
+                <p><strong>SQL (Structured Query Language)</strong> adalah bahasa yang digunakan untuk berkomunikasi dengan database. SQL memungkinkan pengguna untuk melakukan berbagai operasi pada data dalam database, seperti mengambil, menyimpan, memperbarui,
+                    dan menghapus data. SQL digunakan dalam Sistem Manajemen Basis Data (DBMS) untuk mengelola informasi.</p>
+
+                <h2>1. DDL (Data Definition Language)</h2>
+                <p><strong>DDL</strong> adalah bagian dari SQL yang digunakan untuk mendefinisikan struktur atau skema dari database, termasuk membuat, mengubah, dan menghapus tabel atau objek lainnya di dalam database.</p>
+
+                <h3>Perintah-perintah DDL:</h3>
+                <ul>
+                    <li><strong>CREATE</strong>: Digunakan untuk membuat tabel baru.</li>
+                    <li><strong>ALTER</strong>: Digunakan untuk mengubah struktur tabel yang ada.</li>
+                    <li><strong>DROP</strong>: Digunakan untuk menghapus tabel.</li>
+                    <li><strong>TRUNCATE</strong>: Menghapus semua data dalam tabel, namun struktur tabel tetap ada.</li>
+                </ul>
+
+                <h3>Contoh DDL:</h3>
+                <pre>
+CREATE TABLE Pelanggan (
+    ID INT PRIMARY KEY,
+    Nama VARCHAR(100),
+    Alamat VARCHAR(200)
+);
+            </pre>
+
+                <h2>2. DML (Data Manipulation Language)</h2>
+                <p><strong>DML</strong> adalah bagian dari SQL yang digunakan untuk manipulasi data dalam tabel. Dengan DML, kita bisa menambah, mengubah, dan menghapus data di dalam tabel yang sudah ada.</p>
+
+                <h3>Perintah-perintah DML:</h3>
+                <ul>
+                    <li><strong>INSERT</strong>: Digunakan untuk menambahkan data ke dalam tabel.</li>
+                    <li><strong>UPDATE</strong>: Digunakan untuk memperbarui data yang sudah ada.</li>
+                    <li><strong>DELETE</strong>: Digunakan untuk menghapus data dari tabel.</li>
+                </ul>
+
+                <h3>Contoh DML:</h3>
+                <pre>
+INSERT INTO Pelanggan (ID, Nama, Alamat) 
+VALUES (1, 'Ali', 'Jalan A');
+
+UPDATE Pelanggan 
+SET Alamat = 'Jalan B'
+WHERE ID = 1;
+
+DELETE FROM Pelanggan 
+WHERE ID = 1;
+            </pre>
+
+                <h2>3. DCL (Data Control Language)</h2>
+                <p><strong>DCL</strong> adalah bagian dari SQL yang digunakan untuk mengatur hak akses dan kontrol terhadap data dalam database.</p>
+
+                <h3>Perintah-perintah DCL:</h3>
+                <ul>
+                    <li><strong>GRANT</strong>: Memberikan hak akses kepada pengguna.</li>
+                    <li><strong>REVOKE</strong>: Mencabut hak akses yang telah diberikan kepada pengguna.</li>
+                </ul>
+
+                <h3>Contoh DCL:</h3>
+                <pre>
+GRANT SELECT, INSERT ON Pelanggan TO user1;
+
+REVOKE INSERT ON Pelanggan FROM user1;
+            </pre>
+
+                <h2>4. TCL (Transaction Control Language)</h2>
+                <p><strong>TCL</strong> adalah bagian dari SQL yang digunakan untuk mengelola transaksi dalam database. Transaksi adalah serangkaian operasi yang dilakukan sebagai satu unit kerja yang tak terpisahkan.</p>
+
+                <h3>Perintah-perintah TCL:</h3>
+                <ul>
+                    <li><strong>COMMIT</strong>: Menyimpan perubahan dalam transaksi.</li>
+                    <li><strong>ROLLBACK</strong>: Membatalkan perubahan dalam transaksi.</li>
+                    <li><strong>SAVEPOINT</strong>: Menetapkan titik pemulihan dalam transaksi.</li>
+                </ul>
+
+                <h3>Contoh TCL:</h3>
+                <pre>
+BEGIN TRANSACTION;
+
+INSERT INTO Pelanggan (ID, Nama, Alamat) 
+VALUES (2, 'Budi', 'Jalan C');
+
+SAVEPOINT after_insert;
+
+UPDATE Pelanggan
+SET Alamat = 'Jalan D'
+WHERE ID = 2;
+
+ROLLBACK TO after_insert;
+
+COMMIT;
+            </pre>
+
+                <h2>Perbedaan Antara DDL, DML, DCL, dan TCL</h2>
+                <table class="example-table">
+                    <thead>
+                        <tr>
+                            <th>Kategori</th>
+                            <th>Fungsi Utama</th>
+                            <th>Contoh Perintah</th>
+                            <th>Tujuan</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>DDL</td>
+                            <td>Mendefinisikan struktur database</td>
+                            <td>CREATE, ALTER, DROP, TRUNCATE</td>
+                            <td>Mengatur struktur database</td>
+                        </tr>
+                        <tr>
+                            <td>DML</td>
+                            <td>Memanipulasi data dalam tabel</td>
+                            <td>INSERT, UPDATE, DELETE</td>
+                            <td>Menambah, memperbarui, dan menghapus data</td>
+                        </tr>
+                        <tr>
+                            <td>DCL</td>
+                            <td>Mengelola hak akses pengguna</td>
+                            <td>GRANT, REVOKE</td>
+                            <td>Memberikan atau mencabut hak akses</td>
+                        </tr>
+                        <tr>
+                            <td>TCL</td>
+                            <td>Mengelola transaksi dalam database</td>
+                            <td>COMMIT, ROLLBACK, SAVEPOINT</td>
+                            <td>Mengatur transaksi dan memastikan konsistensi</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h2>Sumber</h2>
+                <p>Penjelasan ini berdasarkan literatur umum tentang SQL, DDL, DML, DCL, dan TCL yang dapat ditemukan pada buku dan artikel teknik seperti:</p>
+                <ul>
+                    <li>"SQL in 10 Minutes, Sams Teach Yourself" oleh Ben Forta</li>
+                    <li>"Learning SQL" oleh Alan Beaulieu</li>
+                </ul>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>NIM 23416255201053</p>
+    </footer>
+
+</body>
+
+</html>

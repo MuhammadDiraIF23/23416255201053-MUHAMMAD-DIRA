@@ -10,7 +10,7 @@
 
 <body>
     <header>
-        <h1>Muhammad Dira IF23A</h1>
+        <h1>Normalisasi pada ERD</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Beranda</a></li>
@@ -21,85 +21,214 @@
     </header>
     <main>
         <article>
-            <h2>Postingan 4</h2>
-            <h3>Apa itu Phyical model</h3>
+
+            <div class="mb-3">
+                <a href="https://www.ubpkarawang.ac.id" class="btn btn-secondary">&larr; Link ke www.ubpkarawang.ac.id
+                </a>
+            </div>
+            <div class="mb-3">
+                <a href="https://www.youtube.com/c/adirpcom" class="btn btn-secondary">&larr; Link ke Adirp.id
+                </a>
+            </div>
+            <div class="mb-3">
+                <h3>Buat ERD tentang Intersection sebanyak 5 kasus</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EZYdNHTWUjc?si=SCp3yC-zGMa3C5xR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h2>Apa itu Normalisasi pada ERD?</h2>
             <p>
-                Physical model atau model fisik dalam basis data adalah representasi yang menggambarkan bagaimana data disimpan secara nyata di dalam sistem komputer. Jika conceptual model seperti denah rumah yang hanya menunjukkan rencana ruang, physical model adalah
-                langkah terakhir dalam pembangunan rumah yang memperhatikan detail-detail teknis, seperti bahan bangunan, ukuran pintu, atau jenis kabel listrik yang digunakan.
+                Normalisasi adalah proses mengorganisasi data dalam sebuah database agar lebih efisien dan terstruktur. Tujuan utamanya adalah menghilangkan data yang duplikat, meminimalkan redundansi, dan memastikan integritas data tetap terjaga. Proses ini sering digunakan
+                dalam desain <b>Entity Relationship Diagram (ERD)</b> untuk memastikan bahwa database bekerja dengan baik.
             </p>
             <p>
-                Pada model fisik, fokusnya adalah pada cara penyimpanan dan pengelolaan data secara efisien di perangkat keras. Ini melibatkan berbagai aspek teknis yang digunakan oleh sistem manajemen basis data (DBMS), seperti struktur penyimpanan, indeks, partisi
-                data, dan optimasi.
+                Untuk menjelaskannya secara sederhana, bayangkan Anda mengatur lemari pakaian. Jika semuanya dibiarkan bercampur (kaos, celana, jaket dalam satu tumpukan), akan sulit menemukan apa yang Anda butuhkan, dan Anda mungkin akan membeli barang yang sebenarnya
+                sudah Anda miliki. Normalisasi seperti menyortir pakaian ke dalam kategori agar lebih mudah diakses dan terorganisasi.
             </p>
-            <p>Fitur utama dari physical model:</p>
+
+            <h3>Tujuan Normalisasi</h3>
+            <ul>
+                <li>Mengurangi Redundansi Data: Data yang sama tidak perlu disimpan di banyak tempat.</li>
+                <li>Meningkatkan Konsistensi: Jika ada perubahan data, cukup diperbarui di satu tempat.</li>
+                <li>Memudahkan Pengelolaan: Database menjadi lebih rapi dan efisien untuk diakses.</li>
+            </ul>
+
+            <h3>Tahapan Normalisasi</h3>
+            <p>Proses normalisasi dilakukan dalam beberapa tahap yang disebut <b>normal forms</b> (NF). Setiap tahap memperbaiki masalah yang lebih kompleks.</p>
+
+            <h4>1. First Normal Form (1NF): Data dalam Bentuk Tabular</h4>
+            <p>Semua data harus berada dalam bentuk tabel. Setiap kolom hanya boleh menyimpan satu nilai. Tidak boleh ada kolom yang memiliki nilai berulang atau grup data.</p>
+
+            <h5>Contoh Tidak Normalisasi (Belum 1NF):</h5>
+            <table class="example-table">
+                <tr>
+                    <th>Nama</th>
+                    <th>Mata Pelajaran</th>
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>Matematika, Fisika</td>
+                </tr>
+                <tr>
+                    <td>Budi</td>
+                    <td>Biologi, Kimia, Matematika</td>
+                </tr>
+            </table>
+
+            <h5>Setelah 1NF:</h5>
+            <table class="example-table">
+                <tr>
+                    <th>Nama</th>
+                    <th>Mata Pelajaran</th>
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>Matematika</td>
+                </tr>
+                <tr>
+                    <td>Ali</td>
+                    <td>Fisika</td>
+                </tr>
+                <tr>
+                    <td>Budi</td>
+                    <td>Biologi</td>
+                </tr>
+                <tr>
+                    <td>Budi</td>
+                    <td>Kimia</td>
+                </tr>
+                <tr>
+                    <td>Budi</td>
+                    <td>Matematika</td>
+                </tr>
+            </table>
+
+            <h4>2. Second Normal Form (2NF): Tidak Ada Ketergantungan Parsial</h4>
+            <p>Semua kolom harus bergantung sepenuhnya pada primary key (kunci utama).</p>
+
+            <h5>Contoh Tidak Normalisasi (Belum 2NF):</h5>
+            <table class="example-table">
+                <tr>
+                    <th>NIM</th>
+                    <th>Mata Kuliah</th>
+                    <th>Dosen</th>
+                    <th>Fakultas</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Matematika</td>
+                    <td>Pak Andi</td>
+                    <td>Teknik</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Fisika</td>
+                    <td>Bu Susi</td>
+                    <td>Teknik</td>
+                </tr>
+            </table>
+
+            <h5>Setelah 2NF:</h5>
+            <h6>Tabel Mahasiswa-Mata Kuliah:</h6>
+            <table class="example-table">
+                <tr>
+                    <th>NIM</th>
+                    <th>Mata Kuliah</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Matematika</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Fisika</td>
+                </tr>
+            </table>
+
+            <h6>Tabel Dosen-Fakultas:</h6>
+            <table class="example-table">
+                <tr>
+                    <th>Dosen</th>
+                    <th>Fakultas</th>
+                </tr>
+                <tr>
+                    <td>Pak Andi</td>
+                    <td>Teknik</td>
+                </tr>
+                <tr>
+                    <td>Bu Susi</td>
+                    <td>Teknik</td>
+                </tr>
+            </table>
+
+            <h4>3. Third Normal Form (3NF): Tidak Ada Ketergantungan Transitif</h4>
+            <p>Kolom non-primer tidak boleh bergantung pada kolom non-primer lainnya.</p>
+
+            <h5>Contoh Tidak Normalisasi (Belum 3NF):</h5>
+            <table class="example-table">
+                <tr>
+                    <th>NIM</th>
+                    <th>Mata Kuliah</th>
+                    <th>Kode Fakultas</th>
+                    <th>Nama Fakultas</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Matematika</td>
+                    <td>TEK</td>
+                    <td>Teknik</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Fisika</td>
+                    <td>TEK</td>
+                    <td>Teknik</td>
+                </tr>
+            </table>
+
+            <h5>Setelah 3NF:</h5>
+            <h6>Tabel Mahasiswa-Mata Kuliah:</h6>
+            <table class="example-table">
+                <tr>
+                    <th>NIM</th>
+                    <th>Mata Kuliah</th>
+                    <th>Kode Fakultas</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>Matematika</td>
+                    <td>TEK</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>Fisika</td>
+                    <td>TEK</td>
+                </tr>
+            </table>
+
+            <h6>Tabel Fakultas:</h6>
+            <table class="example-table">
+                <tr>
+                    <th>Kode Fakultas</th>
+                    <th>Nama Fakultas</th>
+                </tr>
+                <tr>
+                    <td>TEK</td>
+                    <td>Teknik</td>
+                </tr>
+            </table>
+
+            <h3>Kapan Normalisasi Diperlukan?</h3>
+            <ul>
+                <li>Database besar: Untuk mengurangi ruang penyimpanan dan mempercepat pencarian data.</li>
+                <li>Mengelola perubahan data: Agar pembaruan hanya perlu dilakukan di satu tempat tanpa mempengaruhi data lainnya.</li>
+                <li>Meningkatkan konsistensi: Untuk menghindari data yang salah atau bertentangan.</li>
+            </ul>
+
+            <h3>Kesimpulan</h3>
             <p>
-                <h3>1.Detail penyimpanan</h3>
-                <ul>
-                    <p>
-                        Menjelaskan bagaimana data disimpan secara fisik dalam bentuk file, tabel, atau struktur lainnya di dalam sistem penyimpanan (seperti hard drive atau server cloud).
-                    </p>
-                    <p>
-                        Contoh: Sebuah tabel yang dalam conceptual model hanya menggambarkan data siswa, dalam physical model akan dijelaskan bahwa setiap entri siswa disimpan sebagai baris pada file tertentu dengan ukuran tertentu.
-                    </p>
-                </ul>
+                Normalisasi adalah proses penting dalam desain database untuk memastikan data tidak duplikat, lebih mudah dikelola, dan efisien. Dengan memecah data menjadi beberapa tabel kecil, kita dapat menjaga kualitas dan konsistensi data.
             </p>
-            <p>
-                <h3>2.Indexing</h3>
-                <ul>
-                    <p>
-                        Physical model menentukan cara pencarian data yang cepat dengan menggunakan indeks. Indeks adalah struktur tambahan yang dibuat untuk mempercepat pencarian data, mirip seperti daftar isi di buku.
-                    </p>
-                    <p>
-                        Contoh: Jika kita sering mencari siswa berdasarkan nomor ID, physical model bisa membuat indeks di kolom nomor ID untuk mempercepat pencarian.
-                    </p>
-                </ul>
-            </p>
-            <p>
-                <h3>3.Partisi data</h3>
-                <ul>
-                    <p>
-                        Data bisa dipartisi atau dipisah-pisahkan berdasarkan kategori tertentu. Ini dilakukan untuk meningkatkan efisiensi penyimpanan atau akses data.
-                    </p>
-                    <p>
-                        Contoh: Jika ada jutaan data transaksi yang tersebar selama bertahun-tahun, physical model bisa membagi transaksi tersebut per tahun, sehingga akses ke data tahun tertentu lebih cepat.
-                    </p>
-                </ul>
-            </p>
-            <p>
-                <h3>4.Optimasi penyimpanan dan akses</h3>
-                <ul>
-                    <p>
-                        Physical model dirancang untuk memaksimalkan kecepatan dan efisiensi akses data, termasuk meminimalkan ruang penyimpanan yang digunakan dan mempercepat proses pengambilan data.
-                    </p>
-                </ul>
-            </p>
-            <p>
-                <h3>5.Tipe data</h3>
-                <ul>
-                    <p>
-                        Pada level ini, tipe data yang digunakan untuk menyimpan informasi juga ditentukan, misalnya apakah kolom tertentu harus berupa angka, teks, atau tanggal.
-                    </p>
-                    <p>
-                        Contoh: Dalam tabel siswa, kolom usia mungkin akan ditentukan sebagai tipe "Integer" (angka bulat), sementara nama siswa mungkin akan disimpan sebagai "Varchar" (teks).
-                    </p>
-                </ul>
-            </p>
-            <p>
-                Contoh sederhana dari physical model: Jika kita membuat sistem untuk menyimpan data siswa di sekolah, conceptual model mungkin hanya mengatakan ada tabel "Siswa" dengan informasi seperti nama, umur, dan kelas. Namun, physical model akan lebih rinci, dengan
-                menjelaskan bahwa:
-                <ul>
-                    <li>Nama disimpan sebagai teks dengan panjang maksimum 50 karakter.
-                    </li>
-                    <li>Umur disimpan sebagai angka.
-                    </li>
-                    <li>Database akan membuat indeks di kolom "ID siswa" untuk mempercepat pencarian data.
-                    </li>
-                    <li>Data siswa disimpan dalam file tertentu di server dengan alokasi memori dan pengaturan akses</li>
-                </ul>
-            </p>
-            <p>
-                Jadi, physical model adalah langkah akhir dari desain basis data, memastikan bahwa sistem dapat menyimpan dan mengelola data secara efisien dan aman sesuai dengan kebutuhan sistem.
-            </p>
+            <p>Jadi, jika Anda melihat banyak data yang berulang dalam tabel, itu tanda bahwa database perlu dinormalisasi!</p>
         </article>
     </main>
     <footer>

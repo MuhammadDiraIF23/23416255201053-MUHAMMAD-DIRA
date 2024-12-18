@@ -21,133 +21,105 @@
     </header>
     <main>
         <article>
-            <h2>Postingan 2</h2>
-            <h3>Apa itu Basis Data</h3>
+            <div class="mb-3">
+                <a href="https://www.ubpkarawang.ac.id" class="btn btn-secondary">&larr; Link ke www.ubpkarawang.ac.id
+                </a>
+            </div>
+            <div class="mb-3">
+                <a href="https://www.youtube.com/c/adirpcom" class="btn btn-secondary">&larr; Link ke Adirp.id
+                </a>
+            </div>
+            <div class="mb-3">
+                <h3>Cara Install MySQL Workbench</h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EZYdNHTWUjc?si=SCp3yC-zGMa3C5xR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+
+
+            <h2>Apa itu Atribut,Entitas dan Relasi dalam ERD</h2>
             <p>
-                Basis data adalah kumpulan data yang terorganisir dan dapat diakses dengan cara yang efisien. Tujuan utama basis data adalah untuk menyimpan, mengelola, dan mengambil informasi dengan mudah dan cepat. Berikut adalah penjelasan lebih detail tentang konsep
-                dan komponen basis data:
+                Entity Relationship Diagram (ERD) adalah diagram yang digunakan untuk menggambarkan struktur logis dari basis data. ERD terdiri dari tiga elemen utama: entitas, atribut, dan relasi. Berikut penjelasan lengkapnya:
             </p>
-            <h3>1. Pengertian Basis Data</h3>
+
+
             <p>
-                Basis data dapat didefinisikan sebagai sistem yang memungkinkan penyimpanan dan pengelolaan data secara terstruktur. Data yang disimpan dalam basis data biasanya saling berhubungan, sehingga memungkinkan pengguna untuk melakukan berbagai operasi seperti
-                pencarian, pembaruan, dan penghapusan data.
-            </p>
-            <h3>2. Komponen Basis Data:</h3>
-            <p>
+                <h3>1. Entitas</h3>
+                <p>Entitas adalah objek atau konsep yang mewakili sesuatu yang penting dalam sistem yang akan dimodelkan. Dalam konteks basis data, entitas sering kali mewakili tabel. Setiap entitas bisa berupa orang, tempat, objek, atau peristiwa.</p>
                 <ul>
                     <li>
-                        <h3>Data</h3> Elemen informasi yang akan disimpan, yang bisa berupa teks, angka, tanggal, gambar, atau jenis data lainnya. Data ini diatur dalam bentuk entitas, atribut, atau relasi.</li>
+                        <p><b>Contoh</b> : Dalam sistem sekolah, entitas bisa berupa Siswa, Guru, Kelas, atau Mata Pelajaran.
+                        </p>
+                    </li>
                     <li>
-                        <h3>Sistem Manajemen Basis Data (DBMS)</h3>Perangkat lunak yang berfungsi untuk mengelola basis data, mengatur bagaimana data disimpan, diakses, dan dimodifikasi. Contoh DBMS adalah MySQL, PostgreSQL, Microsoft SQL Server, dan MongoDB.</li>
-                    <li>
-                        <h3>Query Language</h3>Bahasa untuk mengelola dan mengambil data. SQL (Structured Query Language) adalah yang paling umum digunakan dalam basis data relasional.</li>
-                    <li>
-                        <h3>Tabel</h3>Unit dasar penyimpanan dalam basis data relasional, yang terdiri dari kolom (field) dan baris (record). Setiap kolom merepresentasikan atribut, dan setiap baris berisi data untuk entitas tertentu.</li>
-                    <li>
-                        <h3>Index</h3>Struktur tambahan yang dibuat untuk mempercepat pencarian atau pengambilan data dari tabel.</li>
+                        <p>Entitas biasanya dinyatakan sebagai noun (kata benda), seperti Mahasiswa, Buku, atau Karyawan.
+                        </p>
+                    </li>
                 </ul>
             </p>
-            <h3>3. Jenis-Jenis Basis Data</h3>
             <p>
+                <h3>2. Atribut</h3>
+                <p>Atribut adalah informasi atau karakteristik yang menggambarkan suatu entitas. Atribut menjadi kolom-kolom di dalam tabel yang merepresentasikan entitas tersebut.</p>
                 <ul>
-                    <h3>1.Basis Data Relasional</h3>
-                    <ul>
-                        <li>
-                            Data diorganisir dalam bentuk tabel (relasi) yang saling berhubungan melalui kunci (key)
-                        </li>
-                        <li>Digunakan DBMS seperti MySQL, PostgreSQL, SQL Server, Oracle Database.</li>
-                        <li>Data diakses menggunakan SQL (Structured Query Language).</li>
-                    </ul>
-                    <h3>2.Basis Data Non-Relasional (NoSQL)</h3>
-                    <ul>
-                        <li>Data disimpan dalam format yang lebih fleksibel seperti dokumen, key-value, grafik, atau kolom.</li>
-                        <li>Cocok untuk aplikasi dengan skala besar atau data yang tidak terstruktur, seperti media sosial atau big data.</li>
-                        <li>Contoh DBMS NoSQL: MongoDB (berbasis dokumen), Redis (key-value store), Neo4j (grafik), dan Cassandra (kolom).</li>
-                    </ul>
+                    <li>
+                        <p><b>Contoh</b> : Entitas Siswa mungkin memiliki atribut NIM, Nama, Tanggal Lahir, dan Alamat.
+                        </p>
+                    </li>
+                    <li>
+                        <p>Atribut dapat dibedakan menjadi beberapa tipe, ssepertieperti:</p>
+                        <ul>
+                            <li>
+                                <p><b>Atribut Kunci (Primary Key):</b></p>
+                            </li>
+                            <p>Identifikasi unik dari suatu entitas. Misalnya, NIM pada entitas Siswa.</p>
+                            <li>
+                                <p><b>Atribut Komposit:</b></p>
+                            </li>
+                            <p>Atribut yang dapat dipecah menjadi beberapa bagian. Misalnya, atribut Alamat bisa dipecah menjadi Jalan, Kota, Kode Pos.</p>
+                            <li>
+                                <p><b>Atribut Multivalued:</b></p>
+                            </li>
+                            <p>Atribut yang bisa memiliki lebih dari satu nilai. Misalnya, atribut Telepon untuk Siswa yang bisa memiliki lebih dari satu nomor.</p>
+                        </ul>
+                    </li>
                 </ul>
-                <h3>4. Fungsi Utama Basis Data</h3>
-                <p>
+            </p>
+            <p>
+                <h3>3. Relasi</h3>
+                <p>Relasi menggambarkan hubungan antara dua atau lebih entitas. Relasi menunjukkan bagaimana entitas yang berbeda terhubung satu sama lain dalam sistem.</p>
+                <ul>
+                    <li>
+                        <p><b>Contoh:</b> Dalam sistem sekolah, relasi antara entitas Siswa dan Kelas mungkin adalah "Mengikuti". Ini berarti seorang siswa mengikuti atau terdaftar di kelas tertentu.</p>
+                    </li>
+                    <li>
+                        <p>Tipe-tipe relasi:</p>
+                    </li>
                     <ul>
                         <li>
-                            <h3>Penyimpanan Data</h3>Basis data menyediakan tempat penyimpanan untuk berbagai jenis data secara terorganisir.</li>
-                        <li>
-                            <h3>Akses Data</h3>Memungkinkan pengguna atau aplikasi untuk mengakses data secara efisien, baik untuk keperluan pencarian, pengambilan, atau manipulasi data.</li>
-                        <li>
-                            <h3>Manajemen Data</h3>Mengelola data termasuk pemeliharaan, pembaruan, dan penghapusan data sesuai kebutuhan.</li>
-                        <li>
-                            <h3>Keamanan dan Kontrol Akses</h3>Menyediakan mekanisme keamanan untuk membatasi akses hanya kepada pengguna yang berwenang serta melindungi data dari kerusakan atau penyalahgunaan.</li>
-                        <li>
-                            <h3>Pemulihan Data</h3>Fitur backup dan recovery yang menjaga integritas data saat terjadi kegagalan sistem atau kehilangan data.</li>
-                    </ul>
-                </p>
-                <h3>5. Arsitektur Basis Data</h3>
-                <p>
-                    <ul>
-                        <li>
-                            <h3>Single-tier</h3>Seluruh aplikasi dan basis data dioperasikan dalam satu sistem. Biasanya digunakan untuk sistem sederhana.</li>
-                        <li>
-                            <h3>Two-tier</h3>Basis data berada di server, sedangkan aplikasi berjalan di client. Client berkomunikasi langsung dengan DBMS untuk mengakses atau memodifikasi data.</li>
-                        <li>
-                            <h3>Three-tier</h3>Lapisan tambahan (middleware) ditempatkan antara client dan DBMS, yang mengelola logika bisnis dan interaksi antara client dan basis data.</li>
-                    </ul>
-                </p>
-                <h3>6. Operasi Dasar Basis Data (CRUD)</h3>
-                <p>
-                    <ul>
-                        <li>
-                            <h3>Create (Membuat)</h3>Menambahkan data baru ke dalam basis data.
+                            <p><b>Relasi One-to-One (1:1): </b>Satu entitas berhubungan dengan tepat satu entitas lainnya. Misalnya, Direktur memiliki Kantor, dan setiap kantor hanya ditempati oleh satu direktur.</p>
                         </li>
                         <li>
-                            <h3>Read (Membaca)</h3>Mengambil atau menampilkan data yang ada di basis data.
+                            <p><b>Relasi One-to-Many (1:M): </b>Satu entitas bisa berhubungan dengan banyak entitas lain. Misalnya, Guru mengajar banyak Siswa, tapi setiap siswa hanya diajar oleh satu guru.</p>
                         </li>
                         <li>
-                            <h3>Update (Memperbarui)</h3>Mengubah data yang sudah ada dalam basis data.</li>
-                        <li>
-                            <h3>Delete (Menghapus)</h3>Menghilangkan data dari basis data.</li>
+                            <p><b>Relasi Many-to-Many (M:M): </b>Banyak entitas dapat berhubungan dengan banyak entitas lainnya. Misalnya, Mahasiswa bisa mengikuti banyak Mata Kuliah, dan satu Mata Kuliah bisa diikuti oleh banyak mahasiswa.</p>
+                        </li>
                     </ul>
-                </p>
-                <h3>7. Keuntungan Basis Data</h3>
+            </p>
+            </ul>
+            </p>
+            <p>
+                <h3>Contoh Penerapan ERD:</h3>
                 <p>
-                    <ul>
-                        <li>
-                            <h3>Pengorganisasian yang Baik</h3>Basis data menyimpan data secara terstruktur sehingga mudah diakses dan dikelola.</li>
-                        <li>
-                            <h3>Penghematan Waktu dan Sumber Daya</h3>Pengguna dapat mengakses dan mengelola data secara lebih cepat dan efisien daripada cara manual.</li>
-                        <li>
-                            <h3>Keamanan Data</h3>Sistem basis data dilengkapi dengan kontrol akses untuk memastikan hanya pengguna yang berwenang dapat mengakses atau memodifikasi data.</li>
-                        <li>
-                            <h3>Pemulihan yang Mudah</h3>Basis data mendukung fitur backup dan restore sehingga data dapat dipulihkan jika terjadi kesalahan atau kehilangan.</li>
-                        <li>
-                            <h3>Akses Serentak</h3>Basis data memungkinkan banyak pengguna untuk mengakses data yang sama secara bersamaan tanpa mengorbankan integritas data.</li>
-                    </ul>
+                    Physical model dirancang untuk memaksimalkan kecepatan dan efisiensi akses data, termasuk meminimalkan ruang penyimpanan yang digunakan dan mempercepat proses pengambilan data.
                 </p>
-                <h3>8. Contoh Penggunaan Basis Data dalam Kehidupan Sehari-hari</h3>
-                <p>
-                    <ul>
-                        <li>
-                            <h3>E-commerce</h3>Basis data menyimpan informasi produk, pelanggan, dan transaksi.</li>
-                        <li>
-                            <h3>Sistem Perbankan</h3>Basis data menyimpan informasi rekening, transaksi, dan profil nasabah.</li>
-                        <li>
-                            <h3>Media Sosial</h3>Basis data menyimpan informasi pengguna, posting, pesan, dan interaksi lainnya.</li>
-                        <li>
-                            <h3>Sistem Akademik</h3>Basis data digunakan untuk menyimpan informasi mahasiswa, jadwal kuliah, dan nilai akademik.</li>
-                    </ul>
-                </p>
-                <h3>9. Perkembangan Basis Data Modern</h3>
-                <p>
-                    <ul>
-                        <li>
-                            <h3>Cloud Database</h3>Basis data yang di-host di cloud, memungkinkan skalabilitas yang tinggi dan akses dari mana saja.</li>
-                        <li>
-                            <h3>Big Data</h3>Basis data yang mampu menangani volume data yang sangat besar, dengan kemampuan untuk memproses dan menganalisis data secara paralel.</li>
-                        <li>
-                            <h3>AI & Machine Learning</h3>Basis data sekarang digunakan untuk menyimpan dan mengelola data yang digunakan dalam pelatihan model AI dan machine learning.</li>
-                    </ul>
-                </p>
-                <p>
-                    Secara keseluruhan, basis data adalah komponen penting dalam sistem informasi modern. Mereka memainkan peran utama dalam manajemen informasi, baik untuk bisnis skala kecil hingga perusahaan besar.
-                </p>
+                <ul>
+                    <li>Siswa memiliki atribut seperti NIM, Nama, dan Tanggal Lahir.</li>
+                    <li>Guru memiliki atribut seperti ID Guru, Nama Guru, dan Spesialisasi.</li>
+                    <li>Kelas memiliki atribut seperti Kode Kelas dan Nama Kelas.</li>
+                    <li>Relasi antara Siswa dan Kelas adalah "Mengikuti" (many-to-many), karena satu siswa bisa mengikuti banyak kelas, dan satu kelas bisa memiliki banyak siswa.</li>
+                    <li>Relasi antara Guru dan Kelas adalah "Mengajar" (one-to-many), karena satu guru bisa mengajar banyak kelas, tetapi satu kelas hanya memiliki satu guru yang mengajar.</li>
+                </ul>
+                <p>Dengan memahami elemen-elemen ini, kita bisa merancang struktur basis data yang efisien dan sesuai dengan kebutuhan sistem.</p>
             </p>
         </article>
     </main>

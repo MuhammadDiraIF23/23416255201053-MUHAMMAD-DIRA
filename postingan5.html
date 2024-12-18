@@ -4,13 +4,13 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Muhammad Dira IF23A 1053</title>
+    <title>Denormalisasi dalam Basis Data</title>
     <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
     <header>
-        <h1>Muhammad Dira IF23A</h1>
+        <h1>Denormalisasi dalam Basis Data</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Beranda</a></li>
@@ -21,71 +21,133 @@
     </header>
     <main>
         <article>
+            <div class="mb-3">
+                <a href="https://www.ubpkarawang.ac.id" class="btn btn-secondary">&larr; Link ke www.ubpkarawang.ac.id
+                </a>
+            </div>
+            <div class="mb-3">
+                <a href="https://www.youtube.com/c/adirpcom" class="btn btn-secondary">&larr; Link ke Adirp.id
+                </a>
+            </div>
+            <div class="mb-3">
+                <h3>Buatkan sebuah ERD Perpustakaan lengkap dengan penjelasan Normalisasi
+                </h3>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EZYdNHTWUjc?si=SCp3yC-zGMa3C5xR" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <h2>Apa Itu Denormalisasi?</h2>
+            <p><strong>Denormalisasi</strong> adalah kebalikan dari normalisasi dalam desain basis data. Sedangkan normalisasi bertujuan untuk mengurangi duplikasi dan memastikan struktur data yang efisien, denormalisasi justru menambahkan duplikasi data
+                ke dalam database dengan tujuan meningkatkan kinerja query atau pencarian data. Ini sering dilakukan ketika performa lebih penting daripada penghematan ruang penyimpanan atau integritas data yang ketat.</p>
 
-            <h2>Apa itu Atribut,Entitas dan Relasi dalam ERD</h2>
-            <p>
-                Entity Relationship Diagram (ERD) adalah diagram yang digunakan untuk menggambarkan struktur logis dari basis data. ERD terdiri dari tiga elemen utama: entitas, atribut, dan relasi. Berikut penjelasan lengkapnya:
-            </p>
+            <h3>Penjelasan yang Mudah Dipahami</h3>
+            <p>Bayangkan Anda memiliki sebuah buku resep. Dalam buku tersebut, ada beberapa resep yang menggunakan bahan yang sama. Jika Anda menulis bahan yang sama berulang kali untuk setiap resep, itu bisa membuat buku Anda menjadi sangat panjang dan
+                sulit untuk dibaca. Ini seperti <strong>normalisasi</strong>, di mana Anda menghindari pengulangan bahan dan hanya mencatatnya sekali di bagian yang terpisah.</p>
 
+            <p>Namun, jika Anda ingin membuat buku resep Anda lebih mudah diakses dan ingin menemukan resep yang menggunakan bahan tertentu dengan cepat, Anda mungkin memilih untuk menulis bahan yang sama berulang kali di setiap resep. Ini membuatnya lebih
+                mudah ditemukan tetapi menghabiskan lebih banyak ruang di buku Anda. Ini adalah contoh dari <strong>denormalisasi</strong>.</p>
 
-            <p>
-                <h3>1. Entitas</h3>
-                <p>Entitas adalah objek atau konsep yang mewakili sesuatu yang penting dalam sistem yang akan dimodelkan. Dalam konteks basis data, entitas sering kali mewakili tabel. Setiap entitas bisa berupa orang, tempat, objek, atau peristiwa.</p>
-                <ul>
-                    <li><p><b>Contoh</b>
-                        : Dalam sistem sekolah, entitas bisa berupa Siswa, Guru, Kelas, atau Mata Pelajaran.
-                    </p></li>
-                    <li><p>Entitas biasanya dinyatakan sebagai noun (kata benda), seperti Mahasiswa, Buku, atau Karyawan.
-                    </p></li>
-                </ul>
-            </p>
-            <p>
-                <h3>2. Atribut</h3>
-                <p>Atribut adalah informasi atau karakteristik yang menggambarkan suatu entitas. Atribut menjadi kolom-kolom di dalam tabel yang merepresentasikan entitas tersebut.</p>
-                <ul>
-                    <li><p><b>Contoh</b>
-                       : Entitas Siswa mungkin memiliki atribut NIM, Nama, Tanggal Lahir, dan Alamat.
-                    </p></li>
-                    <li><p>Atribut dapat dibedakan menjadi beberapa tipe, ssepertieperti:</p>
-                    <ul><li><p><b>Atribut Kunci (Primary Key):</b></p></li>
-                    <p>Identifikasi unik dari suatu entitas. Misalnya, NIM pada entitas Siswa.</p>
-                    <li><p><b>Atribut Komposit:</b></p></li>
-                    <p>Atribut yang dapat dipecah menjadi beberapa bagian. Misalnya, atribut Alamat bisa dipecah menjadi Jalan, Kota, Kode Pos.</p>
-                    <li><p><b>Atribut Multivalued:</b></p></li>
-                    <p>Atribut yang bisa memiliki lebih dari satu nilai. Misalnya, atribut Telepon untuk Siswa yang bisa memiliki lebih dari satu nomor.</p>
-                    </ul>
-                    </li>
-                </ul>
-            </p>
-            <p>
-                <h3>3. Relasi</h3>
-                <p>Relasi menggambarkan hubungan antara dua atau lebih entitas. Relasi menunjukkan bagaimana entitas yang berbeda terhubung satu sama lain dalam sistem.</p>
-                <ul><li>
-                    <p><b>Contoh:</b> Dalam sistem sekolah, relasi antara entitas Siswa dan Kelas mungkin adalah "Mengikuti". Ini berarti seorang siswa mengikuti atau terdaftar di kelas tertentu.</p>
-                </li>
-                    <li><p>Tipe-tipe relasi:</p></li>
-                    <ul>
-                        <li><p><b>Relasi One-to-One (1:1): </b>Satu entitas berhubungan dengan tepat satu entitas lainnya. Misalnya, Direktur memiliki Kantor, dan setiap kantor hanya ditempati oleh satu direktur.</p></li>
-                        <li><p><b>Relasi One-to-Many (1:M): </b>Satu entitas bisa berhubungan dengan banyak entitas lain. Misalnya, Guru mengajar banyak Siswa, tapi setiap siswa hanya diajar oleh satu guru.</p></li>
-                        <li><p><b>Relasi Many-to-Many (M:M): </b>Banyak entitas dapat berhubungan dengan banyak entitas lainnya. Misalnya, Mahasiswa bisa mengikuti banyak Mata Kuliah, dan satu Mata Kuliah bisa diikuti oleh banyak mahasiswa.</p></li>
-                    </ul>
-                    </p>
-                </ul>
-            </p>
-            <p>
-                <h3>Contoh Penerapan ERD:</h3>
-                   <p>
-                        Physical model dirancang untuk memaksimalkan kecepatan dan efisiensi akses data, termasuk meminimalkan ruang penyimpanan yang digunakan dan mempercepat proses pengambilan data.
-                   </p>
-                   <ul>
-                       <li>Siswa memiliki atribut seperti NIM, Nama, dan Tanggal Lahir.</li>
-                       <li>Guru memiliki atribut seperti ID Guru, Nama Guru, dan Spesialisasi.</li>
-                       <li>Kelas memiliki atribut seperti Kode Kelas dan Nama Kelas.</li>
-                       <li>Relasi antara Siswa dan Kelas adalah "Mengikuti" (many-to-many), karena satu siswa bisa mengikuti banyak kelas, dan satu kelas bisa memiliki banyak siswa.</li>
-                       <li>Relasi antara Guru dan Kelas adalah "Mengajar" (one-to-many), karena satu guru bisa mengajar banyak kelas, tetapi satu kelas hanya memiliki satu guru yang mengajar.</li>
-                   </ul>
-                   <p>Dengan memahami elemen-elemen ini, kita bisa merancang struktur basis data yang efisien dan sesuai dengan kebutuhan sistem.</p>
-            </p>
+            <h3>Kenapa Denormalisasi Dilakukan?</h3>
+            <p>Denormalisasi sering dilakukan untuk <strong>meningkatkan kinerja</strong> pada aplikasi yang memiliki banyak data dan membutuhkan kecepatan tinggi dalam mengakses data. Misalnya:</p>
+            <ul>
+                <li><strong>Mengurangi waktu pencarian data</strong>: Kadang-kadang, database yang dinormalisasi memerlukan banyak join tabel, yang bisa memperlambat kinerja. Dengan denormalisasi, kita bisa menghindari join yang rumit dengan menyimpan data
+                    yang dibutuhkan dalam satu tempat.</li>
+                <li><strong>Mempercepat laporan atau analisis</strong>: Dalam beberapa kasus, laporan yang kompleks memerlukan pengambilan data dari berbagai tabel yang banyak. Denormalisasi membantu dengan mengurangi jumlah tabel yang perlu diakses.</li>
+            </ul>
+
+            <h3>Contoh Denormalisasi</h3>
+            <p>Misalkan kita memiliki dua tabel yang terpisah dalam database yang dinormalisasi:</p>
+
+            <h4>Tabel Pelanggan</h4>
+            <table class="example-table">
+                <tr>
+                    <th>ID Pelanggan</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Alamat</th>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Ali</td>
+                    <td>Jalan A</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Budi</td>
+                    <td>Jalan B</td>
+                </tr>
+            </table>
+
+            <h4>Tabel Pembelian</h4>
+            <table class="example-table">
+                <tr>
+                    <th>ID Pembelian</th>
+                    <th>ID Pelanggan</th>
+                    <th>Barang</th>
+                    <th>Harga</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>Buku</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>2</td>
+                    <td>Pulpen</td>
+                    <td>10</td>
+                </tr>
+            </table>
+
+            <p>Jika kita ingin tahu <strong>nama pelanggan</strong> dan <strong>barang yang dibeli</strong>, kita harus menggabungkan dua tabel ini. Namun, ini membutuhkan proses yang memakan waktu, terutama jika jumlah data sangat besar. Untuk mengatasi
+                hal ini, kita bisa menambahkan nama pelanggan langsung ke tabel <strong>Pembelian</strong>:</p>
+
+            <h4>Tabel Pembelian Denormalisasi</h4>
+            <table class="example-table">
+                <tr>
+                    <th>ID Pembelian</th>
+                    <th>ID Pelanggan</th>
+                    <th>Nama Pelanggan</th>
+                    <th>Barang</th>
+                    <th>Harga</th>
+                </tr>
+                <tr>
+                    <td>101</td>
+                    <td>1</td>
+                    <td>Ali</td>
+                    <td>Buku</td>
+                    <td>50</td>
+                </tr>
+                <tr>
+                    <td>102</td>
+                    <td>2</td>
+                    <td>Budi</td>
+                    <td>Pulpen</td>
+                    <td>10</td>
+                </tr>
+            </table>
+
+            <p>Dengan cara ini, ketika kita ingin melihat pembelian pelanggan, kita tidak perlu lagi menggabungkan dua tabel. Cukup dengan melihat tabel pembelian, kita langsung mendapatkan <strong>nama pelanggan</strong> yang bersangkutan. Namun, kelemahannya
+                adalah jika nama pelanggan berubah, kita harus memperbarui banyak baris dalam tabel pembelian, karena data pelanggan telah diduplikasi.</p>
+
+            <h3>Kapan Denormalisasi Dilakukan?</h3>
+            <p>Denormalisasi biasanya dilakukan ketika:</p>
+            <ul>
+                <li><strong>Kecepatan lebih penting daripada ruang penyimpanan</strong>: Jika aplikasi membutuhkan kecepatan tinggi untuk membaca data dan ruang penyimpanan bukan masalah besar, denormalisasi bisa menjadi solusi.</li>
+                <li><strong>Laporan dan analisis yang kompleks</strong>: Untuk aplikasi yang membutuhkan laporan atau query kompleks yang sering dijalankan, denormalisasi bisa mempercepat waktu eksekusi.</li>
+                <li><strong>Sistem yang sering membaca data</strong>: Jika sistem Anda banyak melakukan operasi baca (misalnya aplikasi yang melayani ribuan pengguna per detik), denormalisasi membantu mempercepat akses data.</li>
+            </ul>
+
+            <h3>Kekurangan Denormalisasi</h3>
+            <p>Meskipun denormalisasi bisa meningkatkan kinerja dalam beberapa situasi, ada juga kelemahannya:</p>
+            <ul>
+                <li><strong>Duplikasi data</strong>: Data yang sama akan disalin ke beberapa tempat, yang bisa menghabiskan lebih banyak ruang penyimpanan.</li>
+                <li><strong>Pembaruan data yang lebih rumit</strong>: Jika data berubah, maka kita perlu memperbarui beberapa tempat sekaligus, yang bisa menyebabkan inkonsistensi atau kesalahan.</li>
+                <li><strong>Pemeliharaan data yang lebih sulit</strong>: Ketika data duplikat tersebar di banyak tempat, memeliharanya menjadi lebih sulit dan rawan kesalahan.</li>
+            </ul>
+
+            <h3>Kesimpulan</h3>
+            <p>Denormalisasi adalah proses yang digunakan untuk meningkatkan kinerja dalam aplikasi yang membutuhkan akses cepat ke data. Namun, ini harus dilakukan dengan hati-hati karena dapat menyebabkan duplikasi data dan masalah dalam pemeliharaan data.
+                Denormalisasi berguna dalam beberapa kasus, terutama untuk aplikasi dengan banyak operasi baca dan kebutuhan kinerja yang tinggi.</p>
         </article>
     </main>
     <footer>
